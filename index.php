@@ -20,10 +20,10 @@ $faq = [
         'answer' => "<p>Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:</p>
         <ol>
             <li>La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:
-                <ul>
+                <ol class=\"letter\">
                 <li>Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.</li>
                 <li>Google LLC, con sede negli Stati Uniti, per il resto del mondo.</li>
-                </ul>
+                </ol>
             <li>La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.</li>
         </ol>
         <p>Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account.</p>"
@@ -52,17 +52,60 @@ $faq = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
 <body>
-    <?php
-    foreach ($faq as $value) {
-        echo '<h1>' . $value['question'] . '</h1>';
-        echo $value['answer'];
-    }
-
-    ?>
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="logo">
+                <span>Privacy e termini</span>
+            </div>
+            <div class="dots">
+                <img src="nineDots.png" alt="Ninedots">
+                <span>G</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Introduzione</a></li>
+                <li><a href="#">Norme sulla privacy</a></li>
+                <li><a href="#">Termini di servizio</a></li>
+                <li><a href="#">Tecnologie</a></li>
+                <li class="active"><a href="#">Domande frequenti</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <?php
+        foreach ($faq as $value) {
+            echo '<h1>' . $value['question'] . '</h1>';
+            echo $value['answer'];
+        }
+        ?>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="list-inline">
+                <ul>
+                    <li>Google</li>
+                    <li>Tutto su Google</li>
+                    <li>Privacy</li>
+                    <li>Termini</li>
+                </ul>
+            </div>
+            <div class="lang">
+                <select name="lang" id="langselect">
+                    <option value="ita">Italiano</option>
+                </select>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
